@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/memory-pops/static/css/main.aa39705a.css",
+    "main.js": "/memory-pops/static/js/main.119b51e0.js",
+    "index.html": "/memory-pops/index.html",
+    "main.aa39705a.css.map": "/memory-pops/static/css/main.aa39705a.css.map",
+    "main.119b51e0.js.map": "/memory-pops/static/js/main.119b51e0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aa39705a.css",
+    "static/js/main.119b51e0.js"
+  ]
+}
