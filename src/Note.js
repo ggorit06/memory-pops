@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Note = (props) => {
+  const [dateTime, setDateTime] = useState(props.note.datetime);
+
   const updateTitle = (e) => {
     const updatedValue = e.target.value;
     const editMeId = props.note.id;
@@ -18,10 +20,9 @@ const Note = (props) => {
   const addDateTime = () => {
     const now = new Date();
     const dateTime = now.toLocaleString();
-    const textArea = document.querySelector("#sticky-note textarea");
-    const currentText = textArea.value;
-    const newText = currentText + "\n" + dateTime;
-    textArea.value = newText;
+    setDateTime(dateTime);
+    const editMeId = props.note.id;
+    props.onType(editMeId, "description");
   };
 
   return (
@@ -39,13 +40,14 @@ const Note = (props) => {
         placeholder="Description..."
         className="note__description"
       />
-      <span onClick={clickDelete} className="note__delete">
-        X
-      </span>
       <div id="sticky-note">
         <textarea></textarea>
         <button onClick={addDateTime}>Add Date and Time</button>
+        <span className="note__datetime">{dateTime}</span>
       </div>
+      <span onClick={clickDelete} className="note__delete">
+        X
+      </span>
     </li>
   );
 };
